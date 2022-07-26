@@ -31,22 +31,22 @@
         <div class="row d-flex text-center">
             <div class="col p-5">
                 <!-- NOTE buyPickaxe and axe-bought -->
-                <button class="btn btn-primary" onclick="buyPickaxe()">(Pickaxe) <span id="cost-one">0</span> </button>
+                <button class="btn btn-primary" onclick="buyPickaxe()">Pickaxe <span id="cost-one">0</span> </button>
                 <p>Number purchased
                     <span id="axe-bought">0</span>
                 </p>
                 <!-- NOTE buyRover and rover-bought -->
-                <button class="btn btn-primary" onclick="buyRover()">(Rover) <span id="cost-two">0</span> </button>
+                <button class="btn btn-primary" onclick="buyRover()">Rover <span id="cost-two">200</span> </button>
                 <p>Number purchased
                     <span id="rover-bought">0</span>
                 </p>
                 <!-- NOTE buyTnt and tnt-bought -->
-                <button class="btn btn-primary" onclick="buyTnt()">(TNT) <span id="cost-three">0</span> </button>
+                <button class="btn btn-primary" onclick="buyTnt()">TNT <span id="cost-three">300</span> </button>
                 <p>Number purchased
                     <span id="tnt-bought">0</span>
                 </p>
                 <!-- NOTE buyLaser and laser-bought -->
-                <button class="btn btn-primary" onclick="buyLaser()">(Laser) <span id="cost-four">0</span> </button>
+                <button class="btn btn-primary" onclick="buyLaser()">Laser <span id="cost-four">600</span> </button>
                 <p>Number purchased
                     <span id="laser-bought">0</span>
                 </p>
@@ -54,7 +54,14 @@
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="container-fluid">
+            <div class="row border border-dark">
+                <div class="col-6">Total Cheese Multiplier: <span id="multiplier">0</span> </div>
+                <div class="col-6">Cheese Per Second: <span id="second">0</span> </div>
+            </div>
+        </div>
+    </footer>
 
 
 

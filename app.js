@@ -3,6 +3,14 @@ function getCheese() {
 
     document.getElementById("cheese").innerHTML = cheese;
     (cheese += 5)
+    for (let key in clickUpgrades) {
+        let clickUpgrade = clickUpgrades[key]
+        if (clickUpgrade.quantity > 0) {
+            cheese += clickUpgrade.quantity * clickUpgrade.multiplier
+            document.getElementById("multiplier").innerText = clickUpgrade.quantity * clickUpgrade.multiplier
+
+        }
+    }
     // iterate through our clickUpgrades... forin loop
     // check to see IF i have an upgrade.. quantity
     // if I have an upgrade, apply its quantity and multiplier to my cheese resource
@@ -96,22 +104,39 @@ function buyRover() {
 }
 buyRover()
 
+function drawTntPrice() {
+    costThreeElm.innerText = clickUpgrades.tnt.price
+}
+
+
+
 function buyTnt() {
+    let tnt = clickUpgrades.tnt
     // let clickUpgrade = clickUpgrades[key]
-    if (cheese >= clickUpgrades.tnt.price) {
-        cheese -= clickUpgrades.tnt.price;
+    if (cheese >= tnt.price) {
+        cheese -= tnt.price;
         clickUpgrades.tnt.quantity += 1;
+        tnt.price = tnt.price * 2
         document.getElementById("tnt-bought").innerHTML = clickUpgrades.tnt.quantity;
+        drawTntPrice()
     }
 }
 buyTnt()
 
+function drawLaserPrice() {
+    costFourElm.innerText = autoUpgrades.laser.price
+}
+
+
 function buyLaser() {
+    let laser = autoUpgrades.laser
     // let clickUpgrade = clickUpgrades[key]
-    if (cheese >= autoUpgrades.laser.price) {
-        cheese -= autoUpgrades.laser.price;
+    if (cheese >= laser.price) {
+        cheese -= laser.price;
         autoUpgrades.laser.quantity += 1;
+        laser.price = laser.price * 2
         document.getElementById("laser-bought").innerHTML = autoUpgrades.laser.quantity;
+        drawLaserPrice()
     }
 
 }
@@ -123,6 +148,7 @@ function collectAutoUpgrades() {
     if (autoUpgrades.laser.quantity > 0) {
         cheese += autoUpgrades.laser.quantity * autoUpgrades.laser.multiplier
         document.getElementById("cheese").innerHTML = cheese;
+        document.getElementById("second").innerText = autoUpgrades.laser.quantity * autoUpgrades.laser.multiplier
     }
 }
 
